@@ -1,0 +1,11 @@
+# apio/SCons build artifacts
+hardware.asc
+hardware.bin
+hardware.json
+.sconsign.dblite
+
+# simulation outputs
+*.out
+
+# IDE
+.vscode/
