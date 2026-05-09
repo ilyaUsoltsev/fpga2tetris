@@ -78,7 +78,24 @@ Power FPGA board separately.
 
 ---
 
-# 4. Build and Flash Example
+# 4. Generate Example Project
+
+Create example project:
+
+```bash
+apio examples -d iCE40-HX1K-EVB/leds
+```
+
+Enter project folder:
+
+```bash
+cd iCE40-HX1K-EVB/leds
+```
+
+
+---
+
+# 5. Build and Flash Example
 
 Build project:
 
@@ -100,7 +117,7 @@ Manufacturer ID: 0x1C / Device ID: 0x7015
 
 ---
 
-# 5. Learn Active-Low Buttons
+# 6. Learn Active-Low Buttons
 
 Board buttons are active-low:
 
@@ -117,7 +134,7 @@ So use inversion:
 
 ---
 
-# 6. FPGA Project Structure
+# 7. FPGA Project Structure
 
 Current structure:
 
@@ -132,7 +149,7 @@ leds/
 
 ---
 
-# 7. Constraints (`constraints.pcf`)
+# 8. Constraints (`constraints.pcf`)
 
 Pin mappings:
 
@@ -151,7 +168,7 @@ signal → physical FPGA pin
 
 ---
 
-# 8. Create Reusable Modules
+# 9. Create Reusable Modules
 
 Example `xor.v`:
 
@@ -185,7 +202,7 @@ Learned:
 
 ---
 
-# 9. Add Simulation Tools to PATH
+# 10. Add Simulation Tools to PATH
 
 Add to `~/.zshrc`:
 
@@ -208,7 +225,7 @@ which vvp
 
 ---
 
-# 10. Run Simulations
+# 11. Run Simulations
 
 Compile:
 
@@ -234,7 +251,7 @@ $monitor(
 
 ---
 
-# 11. Simulation vs Synthesis
+# 12. Simulation vs Synthesis
 
 ## Simulation
 
@@ -259,7 +276,7 @@ hardware.bin
 
 ---
 
-# 12. Flash FPGA
+# 13. Flash FPGA
 
 ```bash
 iceprogduino -I/dev/cu.usbmodem1101 hardware.bin
@@ -267,7 +284,7 @@ iceprogduino -I/dev/cu.usbmodem1101 hardware.bin
 
 ---
 
-# 13. FPGA Development Workflow
+# 14. FPGA Development Workflow
 
 ## Simulate
 
@@ -290,7 +307,7 @@ iceprogduino -I/dev/cu.usbmodem1101 hardware.bin
 
 ---
 
-# 14. Concepts
+# 15. Concepts
 
 - FPGA basics
 - Verilog modules
