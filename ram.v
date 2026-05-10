@@ -1,7 +1,7 @@
 module ram(
     input wire clk,
     input wire we,
-    input wire [11:0] addr,
+    input wire [14:0] addr,
     input wire [15:0] din,
     output reg [15:0] dout
 );

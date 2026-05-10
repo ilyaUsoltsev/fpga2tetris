@@ -1,7 +1,7 @@
 module rom #(
     parameter ROMFILE = "rom.hack"
 )(
-    input wire [7:0] addr,
+    input wire [14:0] addr,
     output wire [15:0] dout
 );
 
@@ -10,6 +10,6 @@ reg [15:0] mem [0:255];
 
 initial $readmemb(ROMFILE, mem);
 
-assign dout = mem[addr];
+assign dout = mem[addr[7:0]];
 
 endmodule
