@@ -10,9 +10,10 @@ module leds(
     input wire [1:0] but
 );
 
-xor_gate xor1(
+mux_gate mux1(
     .a(~but[0]),
     .b(~but[1]),
+    .sel(1'b1),
     .out(led[0])
 );
 

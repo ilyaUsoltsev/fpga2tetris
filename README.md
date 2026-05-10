@@ -8,7 +8,7 @@
 
 ---
 
-# 1. Install Python + Apio
+## 1. Install Python + Apio
 
 ```bash
 python --version
@@ -28,7 +28,7 @@ apio install --all
 
 ---
 
-# 2. Flash Olimexino with `iceprog`
+## 2. Flash Olimexino with `iceprog`
 
 Open Arduino IDE.
 
@@ -53,7 +53,7 @@ Upload firmware successfully.
 
 ---
 
-# 3. Connect Olimexino to FPGA
+## 3. Connect Olimexino to FPGA
 
 UEXT wiring:
 
@@ -78,7 +78,7 @@ Power FPGA board separately.
 
 ---
 
-# 4. Generate Example Project
+## 4. Generate Example Project
 
 Create example project:
 
@@ -92,22 +92,16 @@ Enter project folder:
 cd iCE40-HX1K-EVB/leds
 ```
 
-
----
-
-# 5. Build and Flash Example
-
-Build project:
-
-```bash
 apio build
-```
+
+````bash
 
 Flash FPGA:
 
 ```bash
 iceprogduino -I/dev/cu.usbmodem1101 hardware.bin
-```
+`iceprogduino -I/dev/cu.usbmodem1101 hardware.bin
+````
 
 Successful output includes:
 
@@ -117,7 +111,7 @@ Manufacturer ID: 0x1C / Device ID: 0x7015
 
 ---
 
-# 6. Learn Active-Low Buttons
+## 6. Learn Active-Low Buttons
 
 Board buttons are active-low:
 
@@ -134,7 +128,7 @@ So use inversion:
 
 ---
 
-# 7. FPGA Project Structure
+## 7. FPGA Project Structure
 
 Current structure:
 
@@ -149,7 +143,7 @@ leds/
 
 ---
 
-# 8. Constraints (`constraints.pcf`)
+## 8. Constraints (`constraints.pcf`)
 
 Pin mappings:
 
@@ -168,7 +162,7 @@ signal → physical FPGA pin
 
 ---
 
-# 9. Create Reusable Modules
+## 9. Create Reusable Modules
 
 Example `xor.v`:
 
@@ -202,7 +196,7 @@ Learned:
 
 ---
 
-# 10. Add Simulation Tools to PATH
+## 10. Add Simulation Tools to PATH
 
 Add to `~/.zshrc`:
 
@@ -225,7 +219,7 @@ which vvp
 
 ---
 
-# 11. Run Simulations
+## 11. Run Simulations
 
 Compile:
 
@@ -251,7 +245,7 @@ $monitor(
 
 ---
 
-# 12. Simulation vs Synthesis
+## 12. Simulation vs Synthesis
 
 ## Simulation
 
@@ -276,7 +270,7 @@ hardware.bin
 
 ---
 
-# 13. Flash FPGA
+## 13. Flash FPGA
 
 ```bash
 iceprogduino -I/dev/cu.usbmodem1101 hardware.bin
@@ -284,7 +278,7 @@ iceprogduino -I/dev/cu.usbmodem1101 hardware.bin
 
 ---
 
-# 14. FPGA Development Workflow
+## 14. FPGA Development Workflow
 
 ## Simulate
 
@@ -307,7 +301,17 @@ iceprogduino -I/dev/cu.usbmodem1101 hardware.bin
 
 ---
 
-# 15. Concepts
+## 15 Add new gate
+
+Add to root GATE.v and GATE_tb.v files and run test:
+
+```bash
+
+iverilog -o mux_tb.out mux.v mux_tb.v
+                                         vvp mux_tb.out
+```
+
+## Concepts
 
 - FPGA basics
 - Verilog modules
