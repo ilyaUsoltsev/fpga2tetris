@@ -152,6 +152,14 @@ initial begin
     // should write FFFF to RAM[50]
     test(16'h8488, 16'h0000, 16'hFFFF, 1'b1, 15'd50, 15'd22);
 
+    // D at this point is FFFF, so D=D << 1 should give FFFE
+    // op LSHIFT is 001100
+    test(16'b1110001100010000, 16'h0000, 16'hxxxx, 1'b0, 15'd50, 15'd23);
+
+    // M=D
+    test(16'h8488, 16'h0000, 16'hFFFE, 1'b1, 15'd50, 15'd24);
+
+
     $finish;
 
 end
