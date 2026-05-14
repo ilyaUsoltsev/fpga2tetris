@@ -3,7 +3,7 @@ module alu(
     input wire [15:0] x,
     input wire [15:0] y,
 
-    input wire [4:0] op,
+    input wire [5:0] op,
 
     output reg [15:0] out,
 
@@ -13,35 +13,35 @@ module alu(
 );
 
 // Arithmetic
-localparam OP_ADD      = 5'b00000;
-localparam OP_SUB      = 5'b00001;
-localparam OP_SUB_REV  = 5'b00010;
+localparam OP_ADD      = 6'b000000;
+localparam OP_SUB      = 6'b000001;
+localparam OP_SUB_REV  = 6'b000010;
 
 // Logic
-localparam OP_AND      = 5'b00011;
-localparam OP_OR       = 5'b00100;
-localparam OP_XOR      = 5'b00101;
-localparam OP_NOT_X    = 5'b00110;
-localparam OP_NOT_Y    = 5'b00111;
+localparam OP_AND      = 6'b000011;
+localparam OP_OR       = 6'b000100;
+localparam OP_XOR      = 6'b000101;
+localparam OP_NOT_X    = 6'b000110;
+localparam OP_NOT_Y    = 6'b000111;
 
 // Increment / decrement
-localparam OP_INC_X    = 5'b01000;
-localparam OP_INC_Y    = 5'b01001;
-localparam OP_DEC_X    = 5'b01010;
-localparam OP_DEC_Y    = 5'b01011;
+localparam OP_INC_X    = 6'b001000;
+localparam OP_INC_Y    = 6'b001001;
+localparam OP_DEC_X    = 6'b001010;
+localparam OP_DEC_Y    = 6'b001011;
 
 // Shifts
-localparam OP_LSHIFT   = 5'b01100;
-localparam OP_RSHIFT   = 5'b01101;
-localparam OP_ARSHIFT  = 5'b01110;
+localparam OP_LSHIFT   = 6'b001100;
+localparam OP_RSHIFT   = 6'b001101;
+localparam OP_ARSHIFT  = 6'b001110;
 
 // Constants / pass-through
-localparam OP_ZERO     = 5'b01111;
-localparam OP_ONE      = 5'b10000;
-localparam OP_NEGONE   = 5'b10001;
+localparam OP_ZERO     = 6'b001111;
+localparam OP_ONE      = 6'b010000;
+localparam OP_NEGONE   = 6'b010001;
 
-localparam OP_PASS_X   = 5'b10010;
-localparam OP_PASS_Y   = 5'b10011;
+localparam OP_PASS_X   = 6'b010010;
+localparam OP_PASS_Y   = 6'b010011;
 
 always @(*) begin
 
